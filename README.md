@@ -8,14 +8,31 @@ Follow some notes in preparation for a technical presentation at the Cambridge .
 
 ## Features: 
 
- * Value Tuples
- * Nested Local Functions
- * Pattern Matching extensions
- * Ref returns
- * Variable in the middle of an expression (out)
- * Task-like return types for async methods: 
- * Numeric literals
- * ...
+[Language Feature Status](https://github.com/dotnet/roslyn/blob/3e580ad4bb069c3aad6c0b6eba854e13fa5dbfcc/docs/Language%20Feature%20Status.md)
+
+**Working with Data**:
+ * Tuples & Decostruction
+ * Pattern Matching
+ * Expression Bodied Everything (constructors/deconstructors/get/set)
+ * ValueTask (arbitrary async returns)
+
+**Improved Performance**:
+ * Local Functions (clojure implemented as additional arguments)
+ * Ref Returns and ref locals
+ * ValueTask?
+
+**Code Simplification**:
+ * Binary Literals and Digit Separators
+ * Out var
+ * Throw Expr
+
+Features for future version of the language:
+ * Record types
+ * More advanced pattern matching
+ * Nullable & not-nullable reference types
+ * Private proteted
+ * ref returns?
+ * Slices
 
 ## Tools
 
@@ -43,8 +60,16 @@ Follow some notes in preparation for a technical presentation at the Cambridge .
  * The old Tuple type has being extended with extension methods to allow deconstruction
  * The compiler is smart in decostructing ValueTuple. No Decostruct method is involved. The compiler automatically does the assignments.
 
+ # Pattern Matching
+
+ * Proposal https://github.com/dotnet/roslyn/blob/features/patterns/docs/features/patterns.md
+ * Tuple in the case?
+ * expression is Type Identifier
+ * case Pattern when Expression (type identifier, var identifier, constant)
+
 # Nested Local Functions
  * Proposal: https://github.com/dotnet/roslyn/issues/259
  * Your can't have two local functions with the same name even if arguments list if different
 
-...*
+# Other:
+ * Equals(object) using is statement to delegate to IEquatable => obj is Type t ? Equals(t) : false

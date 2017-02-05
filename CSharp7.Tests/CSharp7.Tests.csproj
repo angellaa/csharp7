@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PatternMatching\PatternMatchingTests.cs" />
     <Compile Include="Tuples\ValueTupleTests.cs" />
     <Compile Include="Tuples\OldTupleTests.cs" />
     <Compile Include="Tuples\TupleTests.cs" />
@@ -57,5 +58,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
