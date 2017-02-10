@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OutVariables\OutVariableTests.cs" />
     <Compile Include="PatternMatching\PatternMatchingTests.cs" />
     <Compile Include="Tuples\ValueTupleTests.cs" />
     <Compile Include="Tuples\OldTupleTests.cs" />
