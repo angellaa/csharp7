@@ -243,5 +243,27 @@ namespace CSharp7.Tests.Tuples
                 Age = age;
             }
         }
+
+        [Test]
+        public void Deconstruct_UsingDeconstructAsExtensionMethod()
+        {
+            var date = new DateTime(2017, 2, 1);
+
+            var (year, month, day) = date;
+
+            Assert.That(year, Is.EqualTo(2017));
+            Assert.That(month, Is.EqualTo(2));
+            Assert.That(day, Is.EqualTo(1));
+        }
+    }
+
+    public static class DateTimeExtensions
+    {
+        public static void Deconstruct(this DateTime date, out int Year, out int Month, out int Day)
+        {
+            Year = date.Year;
+            Month = date.Month;
+            Day = date.Day;
+        }
     }
 }
