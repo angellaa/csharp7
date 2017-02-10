@@ -14,8 +14,10 @@ namespace CSharp7.Tests.PatternMatching
             {
                 Assert.That(str, Is.EqualTo("Andrea"));
             }
-
-            Assert.Fail();
+            else
+            {
+                Assert.Fail();
+            }
         }
 
         [Test]
